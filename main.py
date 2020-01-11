@@ -9,13 +9,9 @@ def run_game():
     p.init()
     ai_settings = Settings()
     screen = p.display.set_mode((ai_settings.screen_height,ai_settings.screen_width))
-    p.display.set_caption("Alien Invalid")
+    p.display.set_caption("Alien Invasion")
     ship = Ship(screen)
     while True:
-        gf.check_events()
-        screen.fill(ai_settings.bg_color)
-        ship.blitme()
-        p.display.flip()
+        gf.check_events(ship)
+        gf.update_screen(ai_settings,screen,ship)
 run_game()
-    
-`
