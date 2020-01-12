@@ -3,8 +3,8 @@ import pygame as p
 import time
 from settings import Settings
 from ship import Ship
-import game_functions as gf
-form pygame.sprite import Group
+import game_functions as gf 
+from pygame.sprite import Group
 def run_game():
     #初始化游戏，并创建屏幕
     p.init()
@@ -14,6 +14,6 @@ def run_game():
     ship = Ship(screen)
     bullets = Group()
     while True:
-        gf.check_events(ai_settings,screen,ship)
-        gf.update_screen(ai_settings,screen,ship)
+        gf.check_events(ai_settings,screen,ship,bullets)
+        gf.update_screen(ai_settings,screen,ship,bullets)
 run_game()
