@@ -16,8 +16,8 @@ class Ship():
     def update(self):
         if self.moving_right:
             if self.rect.centerx+100< self.set.screen_width:
-                self.rect.centerx += 1
+                self.rect.centerx += 5
         elif self.moving_left:
             if self.rect.centerx-100> 0:
-                self.rect.centerx -= 1
+                self.rect.centerx -= 5
         print(self.rect.centerx)
