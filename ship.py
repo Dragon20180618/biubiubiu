@@ -2,6 +2,7 @@ import pygame
 from settings import Settings
 class Ship():
     def __init__(self,screen):
+        self.set = Settings()
         self.screen=screen
         self.image = pygame.image.load("images/plane.bmp")
         self.rect = self.image.get_rect()
@@ -14,7 +15,9 @@ class Ship():
     moving_left = False
     def update(self):
         if self.moving_right:
-            if centerx+100< :
-            self.rect.centerx += 1
+            if self.rect.centerx+100< self.set.screen_width:
+                self.rect.centerx += 1
         elif self.moving_left:
-            self.rect.centerx -= 1
+            if self.rect.centerx-100> 0:
+                self.rect.centerx -= 1
+        print(self.rect.centerx)
