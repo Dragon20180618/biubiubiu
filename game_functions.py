@@ -16,7 +16,6 @@ def update_screen(ai_settings,screen,ship,bullets):
     ship.blitme()
     ship.update()
     for bullect in bullets.sprites():
-        bullet.update()
         bullet.draw_bullet
     pygame.display.flip()
 def check_keydown_events(event,ai_settings,screen,ship,bullets):
