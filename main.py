@@ -4,6 +4,7 @@ import time
 from settings import Settings
 from ship import Ship
 import game_functions as gf
+form pygame.sprite import Group
 def run_game():
     #初始化游戏，并创建屏幕
     p.init()
@@ -11,7 +12,8 @@ def run_game():
     screen = p.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
     p.display.set_caption("Alien Invasion")
     ship = Ship(screen)
+    bullets = Group()
     while True:
-        gf.check_events(ship)
+        gf.check_events(ai_settings,screen,ship)
         gf.update_screen(ai_settings,screen,ship)
 run_game()

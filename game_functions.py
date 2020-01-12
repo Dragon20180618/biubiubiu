@@ -1,6 +1,6 @@
 import sys
 import pygame
-def check_events(ship):
+def check_events(ai_settings,screen,ship,bullets):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             system.exit()
@@ -10,8 +10,9 @@ def check_events(ship):
             check_keyup_events(event,ship)
 def update_screen(ai_settings,screen,ship):
     screen.fill(ai_settings.bg_color)
-    ship.update()
     ship.blitme()
+    ship.update()
+    bullects.update()
     pygame.display.flip()
 def check_keydown_events(event,ship):
     if event.key == pygame.K_RIGHT:
