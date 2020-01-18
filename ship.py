@@ -20,4 +20,4 @@ class Ship():
         elif self.moving_left:
             if self.rect.centerx-100> 0:
                 self.rect.centerx -= 5
-        print(self.rect.centerx)
+        #print(self.rect.centerx)
