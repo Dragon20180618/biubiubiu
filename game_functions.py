@@ -5,7 +5,7 @@ from pygame.sprite import Group
 def check_events(ai_settings,screen,ship,bullets):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            system.exit()
+            sys.exit()
         elif event.type == pygame.KEYDOWN:
             check_keydown_events(event,ai_settings,screen,ship,bullets)
         elif event.type == pygame.KEYUP:
@@ -15,7 +15,7 @@ def update_screen(ai_settings,screen,ship,bullets):
     screen.fill(ai_settings.bg_color)
     ship.blitme()
     ship.update()
-    for bullect in bullets.sprites():
+    for bullet in bullets.sprites():
         bullet.draw_bullet
     pygame.display.flip()
 def check_keydown_events(event,ai_settings,screen,ship,bullets):

@@ -2,6 +2,7 @@ import pygame
 from pygame.sprite import Sprite
 class Bullet(Sprite):
     def __init__(self,ai_settings,screen,ship):
+        Sprite.__init__(self)
         self.screen = screen
         #create bullet at (0,0), then set the right location
         self.rect = pygame.Rect(0,0,ai_settings.bullet_width,

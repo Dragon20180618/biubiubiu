@@ -13,6 +13,7 @@ def run_game():
     p.display.set_caption("Alien Invasion")
     ship = Ship(screen)
     bullets = Group()
+    bullets.__init__()
     while True:
         gf.check_events(ai_settings,screen,ship,bullets)
         bullets.update()
