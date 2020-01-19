@@ -1,7 +1,13 @@
 import sys
 import pygame
+
 from bullet import Bullet
 from pygame.sprite import Group
+
+#from pygame import mixer
+#mixer.init()
+#mixer.music.load('music\\bullet.mp3')
+
 def check_events(ai_settings,screen,ship,bullets):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -16,7 +22,10 @@ def update_screen(ai_settings,screen,ship,bullets):
     ship.blitme()
     ship.update()
     for bullet in bullets.sprites():
-        bullet.draw_bullet()
+        if bullet.rect.bottom<=0:
+            bullets.remove(bullet)
+        else :
+            bullet.draw_bullet()
     pygame.display.flip()
 def check_keydown_events(event,ai_settings,screen,ship,bullets):
     if event.key == pygame.K_RIGHT:
@@ -24,7 +33,7 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
-            print("1")
+            #mixer.music.play()
             new_bullet = Bullet(ai_settings,screen,ship)
             bullets.add(new_bullet)
 def check_keyup_events(event,ship):
